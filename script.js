@@ -24,7 +24,12 @@ boardEl.forEach(cell => {
 init();
 
 function init() {
+    boardEl.forEach(cell => {
+        cell.classList.remove('clicked');
+        cell.innerHTML = "";
+    });
     flagBtn.classList.replace('toggled', 'not-toggled');
+
     board = [
         0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0,
@@ -34,8 +39,7 @@ function init() {
         0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0,
-    ];    
-    winner = null;
+    ];
     render();
 }
 
@@ -48,8 +52,13 @@ function render(){
 /* Have a display to tell you the number of mines */
 
 /* have a players move function and event listener */
-function handleInput() {
-
+function handleInput(evt) {
+    const cell = evt.target;
+    if (flagBtn.classList == 'toggled') {
+        cell.innerHTML = '🚩';
+    } else {
+        evt.target.classList.add('clicked');
+    }
 }
 
 /* Have an end game function that activates if the player has passed the level or stepped/"clicked" on a mine */

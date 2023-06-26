@@ -17,16 +17,16 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    width: 44vw;
-    height: 44vh;
+    width: 44vmin;
+    height: 44vmin;
     border: solid black 2vmin;
     background-color: grey;
 }
 
 .cell {
     margin: 0 auto;
-    height: 5vh;
-    width: 5vw;
+    height: 5vmin;
+    width: 5vmin;
     border: .2vmin solid white;
     font-size: 4vmin;
     display: flex;
@@ -46,7 +46,12 @@ body {
     font-size: 10vmin;
     width: 15vmin;
     border-radius: 50%;
+    border: none;
     padding-left: 4vmin;
+}
+
+.not-toggled {
+    background-color: lightgrey;
 }
 
 .toggled{
@@ -55,5 +60,5 @@ body {
 
 
 #play-agn {
-    display: ; 
+    display: /*none*/; 
 }
