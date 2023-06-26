@@ -4,22 +4,38 @@ const PLAYER = "player";
 //state variables//
 let player;
 let board;
-let mines;
+
 
 //cached varriables//
-const playAgn = document.getElementById("pla-agn");
-const boardEl = document.getElementById("board");
-const flagBtn = documnet.getElementById('flag-btn');
+const playAgn = document.getElementById("play-agn");
+const boardEl = document.querySelectorAll(".cell");
+const flagBtn = document.getElementById('flag-btn');
+const mines = document.getElementById('mineLeft');
 
 //EventListener//
 playAgn.addEventListener("click", init);
 flagBtn.addEventListener("click", toggle);
-boardEl.addEventListener("click", hadleInput);
+boardEl.forEach(cell => {
+    cell.addEventListener("click", handleInput);
+});
+    
 
 //functions//
 init();
 
 function init() {
+    flagBtn.classList.replace('toggled', 'not-toggled');
+    board = [
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+    ];    
+    winner = null;
     render();
 }
 
@@ -37,13 +53,13 @@ function handleInput() {
 }
 
 /* Have an end game function that activates if the player has passed the level or stepped/"clicked" on a mine */
-function gameOver() {
-    if {
+// function gameOver() {
+//     if {
 
-    } else {
+//     } else {
 
-    }
-}
+//     }
+// }
 
 /* have a function to count adjacent mines an tag the squares next to the mines */
 function countAdjMines() {
@@ -55,11 +71,14 @@ function countAdjMines() {
 
 /* Have a mark function so the player can remind their self that a mine is there */
 function toggle() {
-
+    this.classList.toggle('not-toggled');
+    this.classList.toggle('toggled');
 }
 
 function renderBoard() {
-
+    board.forEach((boxval, idx) => {
+        
+    })
 }
 
 function renderMessage() {
