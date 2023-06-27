@@ -9,7 +9,10 @@
 </head>
 
 <body>
-    <h1>Mines: <span id="minesLeft"></span></h1>
+    <header>
+        <h1 id="info"><span id="info-text">Mines: <span id="minesLeft"></span></span></h1>
+        <h1 id="time"><span>1:32</span></h1>
+    </header>
     <section id="board">
         <div id="0-0" class="cell"></div>
         <div id="0-1" class="cell"></div>
@@ -76,7 +79,9 @@
         <div id="7-6" class="cell"></div>
         <div id="7-7" class="cell"></div>
     </section>
-    <button id="flag-btn" class="not-toggled">🚩</button>
-    <button id="play-agn">Play Again</button>
+    <footer>
+        <button id="flag-btn" class="not-toggled">🚩</button>
+        <button id="play-agn" class="show">Play Again</button>
+    </footer>
 </body>
 </html>

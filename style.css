@@ -10,22 +10,62 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(222, 216, 199);
+}
+
+header {
+    display: grid;
+    grid-template-columns: 30vmin 30vmin;
+    font-size: 2vmin;
+    color:white;
+    height: 8vmin;
+    background-color: black;
+    cursor: default;
+}
+
+#info {
+    font-size: 3vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#info-text {
+    padding: .5vmin;
+    background-color: grey;
+    border: solid white .5vmin;
+}
+
+#time {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vmin;
+}
+
+#time span {
+    margin-left: 1.5vmin;
+    padding: .5vmin;
+    padding-left: 4vmin;
+    padding-right: 4vmin;
+    background-color: grey;
+    border: solid white .5vmin;
 }
 
 #board {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    width: 44vmin;
-    height: 44vmin;
+    width: 60vmin;
+    height: 60vmin;
     border: solid black 2vmin;
     background-color: grey;
 }
 
 .cell {
     margin: 0 auto;
-    height: 5vmin;
-    width: 5vmin;
+    height: 7vmin;
+    width: 7vmin;
     border: .2vmin solid white;
     font-size: 4vmin;
     display: flex;
@@ -38,16 +78,28 @@ body {
     background-color:lightgrey;
 }
 
-#flag-btn {
-    margin: 0 auto;
-    margin-top: 3vmin;
+footer {
+    display: flex;
+    background-color: black;
+    width: 60vmin;
     justify-content: center;
     align-items: center;
-    font-size: 10vmin;
-    width: 15vmin;
+
+}
+
+#flag-btn {
+    margin-top: -1vmin;
+    margin-bottom: 1vmin;
+    font-size: 7vmin;
+    width: 12vmin;
     border-radius: 50%;
     border: none;
-    padding-left: 4vmin;
+    padding-left: 3vmin;
+    cursor: pointer;
+}
+
+#flag-btn.hide {
+    display: none;
 }
 
 .not-toggled {
@@ -55,10 +107,26 @@ body {
 }
 
 .toggled{
-    background-color: darkgrey;
+    background-color: yellow;
 }
 
 
 #play-agn {
-    display: /*none*/; 
+    display: none; 
+}
+
+#play-agn.show {
+    display: flex;
+    margin-top: -1vmin;
+    margin-bottom: 1vmin;
+    font-size: 3vmin;
+    padding: 1vmin;
+    border: solid black .5vmin;
+    border-radius: 40% 40%;
+}
+
+#play-agn.show:hover {
+    border: solid white .5vmin;
+    background-color: black;
+    color:white;
 }

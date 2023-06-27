@@ -5,6 +5,7 @@
 let board;
 let mineAmount = 10;
 let minePosition = [];
+let endGame = false;
 
 //cached varriables//
 const playAgn = document.getElementById("play-agn");
@@ -55,7 +56,9 @@ function render(){
 /* have a players move function and event listener */
 function handleInput(evt) {
     const cell = evt.target;
-    if (flagBtn.classList == 'toggled') {
+    if (cell.classList.contains("click") || endGame) {
+        return;
+    } else if (flagBtn.classList == 'toggled') {
         if (cell.innerHTML == '') {
             cell.innerHTML = '🚩';
         } else {
@@ -67,10 +70,11 @@ function handleInput(evt) {
         cell.classList.add('clicked');
         countAdjMines();
     }
-}
+}   
 
 /* Have an end game function that activates if the player has passed the level or stepped/"clicked" on a mine */
  function gameOver() {
+    endGame = true;
     boardEl.forEach((cell) => {
         if (minePosition.includes(cell.id)) {
             cell.innerHTML = '💣';
@@ -79,10 +83,10 @@ function handleInput(evt) {
     })
  }
 /* have a function to count adjacent mines an tag the squares next to the mines */
-function countAdjMines() {
+function countAdjMines(row, column) {
+    //if ()
     let minesFound = 0;
-    minesFound += countAdjacent();
-    minesFound += countAdjacent();
+   
 
 }
 
@@ -110,5 +114,4 @@ function renderMines() {
 
 function renderMessage() {
     mineCount.innerHTML = mineAmount;
-
 }
