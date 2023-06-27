@@ -3,14 +3,13 @@
 }
 
 body {
-    margin-top: 10vmin;
+    margin-top: 5vmin;
     text-align: center;
     font-weight: bold;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
 
 #board {
@@ -32,6 +31,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .cell.clicked {
