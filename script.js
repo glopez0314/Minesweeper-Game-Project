@@ -1,13 +1,11 @@
-//constants//
-
-//state variables//
 let mineAmount = 10;
 let minePosition = [];
 let marked = 0;
 let cellsClicked = 0;
+let time = 0;
 
-//cached varriables//
 const playAgn = document.getElementById("play-agn");
+const board = document.getElementById('board');
 const boardEl = document.querySelectorAll(".cell");
 const flagBtn = document.getElementById('flag-btn');
 const barOne = document.getElementById('info');
@@ -15,16 +13,15 @@ const barTwo = document.getElementById('time');
 const barThree = document.getElementById('bar-three');
 const barFour = document.getElementById('bar-four');
 const mineCount = document.getElementById('minesLeft');
+const winMessage = document.getElementById('win-message');
+const timer = document.getElementById('counter');
 
-//EventListener//
 playAgn.addEventListener("click", init);
 flagBtn.addEventListener("click", toggle);
 boardEl.forEach(cell => {
     cell.addEventListener("click", handleInput);
 });
     
-
-//functions//
 init();
 
 function init() {
@@ -41,6 +38,8 @@ function init() {
         cell.innerHTML = "";
         cell.style.backgroundColor = '';
     });
+    board.classList.remove('hide');
+    winMessage.classList.remove('show');
     flagBtn.classList.remove('hide');
     playAgn.classList.remove('show');
     barOne.classList.remove('hide');
@@ -53,18 +52,15 @@ function init() {
     mineAmount = 10;
     marked = 0;
     endGame = false;
+    time = 0;
     render();
 }
 
-/* have a function that renders the board*/
 function render(){
     renderMines();
     renderMessage();
 }
 
-/* Have a display to tell you the number of mines */
-
-/* have a players move function and event listener */
 function handleInput(evt) {
     const cell = evt.target;
     if (cell.classList.contains("clicked") || endGame) {
@@ -100,6 +96,9 @@ function checkWin() {
         endGame = true;
         flagBtn.classList.add('hide');
         playAgn.classList.add('show');
+        board.classList.add('hide');
+        winMessage.classList.add('show');
+        
     }
 } 
 
@@ -118,7 +117,7 @@ function gameOver() {
         }
     })
  }
-/* have a function to count adjacent mines an tag the squares next to the mines */
+
 function countAdjMines(row, col) {
     const cell = document.getElementById(row.toString() + "-" + col.toString())
     if (row < 0 || row >= 8 || col < 0 || col >= 8) {
@@ -166,11 +165,6 @@ function countAdjMines(row, col) {
     }
 }
 
-
-/* have a function that will open adjacent empty spaces not touching a mine */
-//flood function?
-
-/* Have a mark function so the player can remind their self that a mine is there */
 function toggle() {
     this.classList.toggle('not-toggled');
     this.classList.toggle('toggled');
@@ -192,3 +186,16 @@ function renderMines() {
 function renderMessage() {
     mineCount.innerHTML = (mineAmount - marked);
 };
+
+function startTimer() {
+    setInterval(countTime, 1000);
+}
+
+function countTime() {
+    if (!endGame) {
+        time++;
+        timer.innerText = time;
+    }
+}
+
+startTimer();

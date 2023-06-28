@@ -3,7 +3,6 @@
 }
 
 body {
-    margin-top: 5vmin;
     text-align: center;
     font-weight: bold;
     display: flex;
@@ -11,6 +10,12 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgb(222, 216, 199);
+}
+
+#title {
+    margin-top: -1vmin;
+    font-size: 7vmin;
+    color: rgb(86, 86, 87);
 }
 
 header {
@@ -68,6 +73,10 @@ header {
     height: 60vmin;
     border: solid black 2vmin;
     background-color: grey;
+}
+
+#board.hide {
+    display: none;
 }
 
 .cell {
@@ -140,7 +149,7 @@ footer {
 }
 
 #bar-three {
-    display: hide;
+    display: none;
 }
 
 #bar-three.show {
@@ -189,4 +198,26 @@ footer {
 
 .m-8 {
     color: black;
+}
+
+#win-message {
+    display: none;
+}
+
+#win-message.show {
+    display: flex;
+    flex-direction: column;
+    word-spacing: 20vmin;
+    justify-content: center;
+    align-items: center;
+    height: 60vmin;
+    width: 60vmin;
+    background-color: black;
+    color: white;
+    font-size: 12vmin;
+}
+
+#win-text {
+    background-color: grey;
+    border: solid black 2vmin;
 }
