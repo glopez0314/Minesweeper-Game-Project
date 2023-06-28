@@ -36,6 +36,10 @@ header {
     border: solid white .5vmin;
 }
 
+#info.hide {
+    display: none
+}
+
 #time {
     display:flex;
     justify-content: center;
@@ -50,6 +54,10 @@ header {
     padding-right: 4vmin;
     background-color: grey;
     border: solid white .5vmin;
+}
+
+#time.hide {
+    display: none;
 }
 
 #board {
@@ -122,11 +130,63 @@ footer {
     font-size: 3vmin;
     padding: 1vmin;
     border: solid black .5vmin;
-    border-radius: 40% 40%;
+    border-radius: 50%;
 }
 
 #play-agn.show:hover {
     border: solid white .5vmin;
     background-color: black;
     color:white;
+}
+
+#bar-three {
+    display: hide;
+}
+
+#bar-three.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bar-four {
+    display: none;  
+}
+
+#bar-four.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-1 {
+    color: blue;
+}
+
+.m-2 {
+    color: green;
+}
+
+.m-3 {
+    color: yellow;
+}
+
+.m-4 {
+    color: orange;
+}
+
+.m-5 {
+    color: red;
+}
+
+.m-6 {
+    color: purple;
+}
+
+.m-7 {
+    color: brown;
+}
+
+.m-8 {
+    color: black;
 }
