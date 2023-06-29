@@ -4,7 +4,7 @@ This project is a representation of the game Minesweeper. In this game you have 
 
 <img src="https://github.com/glopez0314/Minesweeper-Game-Project/blob/main/Screenshot%202023-06-29%20at%2012.31.46%20PM.png"/>
 <img src="https://github.com/glopez0314/Minesweeper-Game-Project/blob/main/Screenshot%202023-06-29%20at%2012.33.15%20PM.png"/>
-<img src="https://githun.com/glopez0314/Minesweeper-Game-Project/blob/main/Screenshot%202023-06-29%20at%2012.34.55%20PM.png"/>
+<img src="https://github.com/glopez0314/Minesweeper-Game-Project/blob/main/Screenshot%202023-06-29%20at%2012.34.55%20PM.png"/>
 <img src="https://github.com/glopez0314/Minesweeper-Game-Project/blob/main/Screenshot%202023-06-29%20at%2012.36.46%20PM.png"/>
 
 
