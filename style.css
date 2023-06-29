@@ -24,7 +24,7 @@ header {
     font-size: 2vmin;
     color:white;
     height: 8vmin;
-    background-color: black;
+    background-color: rgb(45, 45, 45);
     cursor: default;
 }
 
@@ -71,7 +71,7 @@ header {
     margin: 0 auto;
     width: 60vmin;
     height: 60vmin;
-    border: solid black 2vmin;
+    border: solid rgb(45, 45, 45) 2vmin;
     background-color: grey;
 }
 
@@ -97,7 +97,7 @@ header {
 
 footer {
     display: flex;
-    background-color: black;
+    background-color: rgb(45, 45, 45);
     width: 60vmin;
     justify-content: center;
     align-items: center;
@@ -134,8 +134,8 @@ footer {
 
 #play-agn.show {
     display: flex;
-    margin-top: -1vmin;
-    margin-bottom: 1vmin;
+    margin-top: .7vmin;
+    margin-bottom: 2.7vmin;
     font-size: 3vmin;
     padding: 1vmin;
     border: solid black .5vmin;
@@ -208,16 +208,17 @@ footer {
     display: flex;
     flex-direction: column;
     word-spacing: 20vmin;
+    line-height: 19vmin;
     justify-content: center;
     align-items: center;
     height: 60vmin;
     width: 60vmin;
-    background-color: black;
+    background-color: rgb(45, 45, 45);
     color: white;
     font-size: 12vmin;
 }
 
 #win-text {
     background-color: grey;
-    border: solid black 2vmin;
+    border: solid rgb(45, 45, 45) 2vmin;
 }
