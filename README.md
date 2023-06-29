@@ -10,6 +10,6 @@ This project is a representation of the game Minesweeper. In this game you have 
 
 HTML, CSS, and JavaScript was used to build this game.
 
-You can play the game here ->
+You can play the game here -> https://glopez0314.github.io/Minesweeper-Game-Project/
 
 I plan to add a function so the games timer doesn't start till the user clicks on a box. I also plan to add a difficulty selector that will change the amount of mines and spaces on the board.
