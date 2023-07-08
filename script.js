@@ -1,8 +1,10 @@
 let minePosition;
 let cellsClicked;
-let endGame;
 let mineAmount;
+let strTime;
+let endGame;
 let marked;
+let clock;
 let time;
 
 const winMessage = document.getElementById('win-message');
@@ -46,7 +48,9 @@ function init() {
     endGame = false;
     marked = 0;
     time = 0;
+    timer.innerText = time;
     render();
+    stopTime();
 }
 
 
@@ -77,6 +81,7 @@ function handleInput(evt) {
         let col = parseInt(num[1]);
         countAdjMines(row, col);
         checkWin();
+        startTimer();
     }
 }   
 
@@ -182,14 +187,20 @@ function renderMessage() {
 };
 
 function startTimer() {
-    setInterval(countTime, 1000);
+    if (!strTime) {
+        strTime = true;
+        clock = setInterval(countTime, 1000);
+    }
 }
 
 function countTime() {
     if (!endGame) {
         time++;
         timer.innerText = time;
-    }
+    } else return;
 }
 
-startTimer();
+function stopTime() {
+    clearInterval(clock);
+    strTime = false;
+}
